@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>Image and Text Hover</title>
+<style>
+#image-container {
+position: relative;
+width: 300px;
+height: 200px;
+background-color: #ccc;
+text-align: center;
+}
+#image-container img {
+width: 100%;
+height: auto; }
+#hidden-content {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+text-align: center;
+display: none; }
+</style>
+</head>
+<body bgcolor="lavender"><center>
+<div id="image-container">
+<img src="oggy.jpg" alt="Image 1" style="height : 200% ;" >
+<p id="image-text">Oggy with happyyyy face...!!</p>
+<div id="hidden-content">
+<img src="oggy2.jpg" alt="Image 2"  style="height : 200%;">
+</div>
+</div>
+<script>
+const imageContainer = document.getElementById('image-container');
+const hiddenContent = document.getElementById('hidden-content');
+const imageText = document.getElementById('image-text');
+imageContainer.addEventListener('mouseover', () => {
+hiddenContent.style.display = 'block';
+imageText.textContent = 'Oggy with sad mooddd...!!'; });
+imageContainer.addEventListener('mouseout', () => {
+hiddenContent.style.display = 'none';
+imageText.textContent = 'Oggy with happyyyy face...!!'; });
+</script></center>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<html>
+    <head>
+
+    </head>
+
+    <body bgcolor="F08080" > 
+        <!-- 9d825d e4d5b4 -->
+        <center>
+        <h1>String Functions</h1>
+        <label for="string1"><b>Enter the first string:</b></label>
+        <input type="text" id="string1"><br><br>
+        <label for="string2"><b>Enter the second string:</b></label>
+        <input type="text" id="string2"><br><br>
+        <button onclick="strfun()">Perform String Functions</button>
+        
+        <p id="paragraph">
+            <script>
+                function strfun(){
+                    const string1=document.getElementById("string1").value
+                    const string2=document.getElementById("string2").value
+                    let result="";
+
+                    const len_string = string1.length; 
+                    const len_string2 = string2.length;
+                    result += "Length of first string: " + len_string + "<br>"+"<br>"+"Length of second string: " + len_string2 + "<br>"+"<br>";
+                    document.getElementById("paragraph").innerHTML = result;
+
+                    const start=parseInt(prompt("Enter the start index for slicing the string: "))
+                    const end=parseInt(prompt("Enter the end index for slicing the string: "))
+                    const slice_string = string1.slice(start,end); 
+                    const slice_string2 = string2.slice(start,end);
+                    result += "Sliced portion of first string: " + slice_string + "<br>"+"<br>"+"Sliced portion of second string: " + slice_string2 + "<br>"+"<br>";
+                    document.getElementById("paragraph").innerHTML = result;
+
+                    const r1=prompt("Enter the substring you want to replace: ")
+                    const r2=prompt("Enter the replacement substring: ")
+                    const replace_string=string1.replace(r1,r2)
+                    const replace_string2=string2.replace(r1,r2)
+                    result+="First string after replacing: "+replace_string+"<br><br>"+"Second string after replacing: "+replace_string2+"<br><br>";
+                    document.getElementById("paragraph").innerHTML = result;
+
+                    const u=string1.toUpperCase();
+                    const l=string2.toLowerCase();
+                    result+="First string in upper case: "+u+"<br><br>"+"Second string in lower case: "+l+"<br><br>";
+                    document.getElementById("paragraph").innerHTML=result;
+
+                    const c=string1.concat(" ",string2)
+                    result+="Concatenation of two strings: "+c+"<br><br>"
+                    document.getElementById("paragraph").innerHTML=result;
+                }
+            </script>
+        </p>
+        </center>
+    </body>
+</html>

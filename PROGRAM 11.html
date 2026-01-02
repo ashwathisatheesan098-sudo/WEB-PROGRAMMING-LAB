@@ -1,0 +1,177 @@
+<html>
+<head>
+    <title>Student Registration Form</title>
+    <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            background-color: #F0F8FF;
+            margin: 0;
+        }
+        h2 
+        {
+            text-align: center;
+            color: #980b0b;
+        }
+        table 
+        {
+            width: 100%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        td 
+        {
+            padding: 10px;
+            text-align: left;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="date"], select, textarea 
+        {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+        button 
+        {
+            width: 200px;
+            padding: 10px;
+            display: block;
+            margin: 20px auto;
+            background-color: rgb(255, 0, 0);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover 
+        {
+            background-color: rgb(255, 0, 0);
+        }
+        textarea 
+        {
+            resize: vertical;
+        }
+        .form-container 
+        {
+            width: 60%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+        }
+
+        .error 
+        {
+            color: red;
+            font-size: 0.9em;
+        }
+
+        #successMessage 
+        {
+            text-align: center;
+            color: green;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2>STUDENT REGISTRATION FORM</h2>
+    <form action="#" method="POST" onsubmit="return validateForm()">
+        <table>
+            <tr>
+                <td><label>First Name:</label></td>
+                <td><input type="text" id="firstName" name="firstName" ></td>
+            </tr>
+            <tr>
+                <td><label>Last Name:</label></td>
+                <td><input type="text" id="lastName" name="lastName" ></td>
+            </tr>
+            <tr>
+                <td><label>Date of Birth:</label></td>
+                <td><input type="date" id="dob" name="dob" ></td>
+            </tr>
+            <tr>
+                <td><label>Phone Number:</label></td>
+                <td><input type="text" id="phone" name="phone" ></td>
+            </tr>
+            <tr>
+                <td><label>Email Address:</label></td>
+                <td><input type="text" id="email" name="email" ></td>
+            </tr>
+            <tr>
+                <td><label>Password:</label></td>
+                <td><input type="password" id="password" name="password"  minlength="6" placeholder="Minimum 6 characters"></td>
+            </tr>
+            <tr>
+                <td><label>Gender:</label></td>
+                <td>
+                    <select id="gender" name="gender" >
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Address:</label></td>
+                <td><textarea id="address" name="address" rows="4" ></textarea></td>
+            </tr>
+            <tr>
+                <td><label>Course of Study:</label></td>
+                <td><input type="text" id="course" name="course" ></td>
+            </tr>
+        </table>
+        <button type="submit">Register</button>
+    </form>
+</div>
+<script>
+    function validateForm() 
+    {
+        let firstName = document.getElementById('firstName').value;
+        let lastName = document.getElementById('lastName').value;
+        let phone = document.getElementById('phone').value;
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+        let gender = document.getElementById('gender').value;
+        let dob = document.getElementById('dob').value;
+        let address = document.getElementById('address').value;
+        let course = document.getElementById('course').value;
+        if (!firstName || !lastName || !phone || !email || !password || !gender || !dob || !address || !course) 
+        {
+            alert("All fields are required.");
+            return false;
+        }
+
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailPattern.test(email)) 
+        {
+            alert("Please enter a valid email address.");
+            return false;
+        }
+        const phonePattern = /^[0-9]{10}$/;
+        if (!phonePattern.test(phone)) 
+        {
+            alert("Please enter a valid 10-digit phone number.");
+            return false;
+        }
+        if (password.length < 6) 
+        {
+            alert("Password must be at least 6 characters long.");
+            return false;
+        }
+        else
+        {
+            alert("Registered Successfully!");
+            return true;
+        }
+    }
+</script>
+</body>
+</html>

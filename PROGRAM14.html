@@ -1,0 +1,15 @@
+<html>
+<body><center>
+<?php
+$players = array("Sachin tendulkar", "Rohit sharma", "virat kohli", "Hardik Pandya",
+"Jasprit Bumrah");
+echo "<table border='1' cellpadding='5'>";
+echo "<tr><th>Indian Cricket Players</th></tr>";
+$arrlength = count($players);
+for($x = 0; $x < $arrlength; $x++) {
+echo "<tr><td>" . $players[$x] . "</td></tr>";
+}
+echo "</table>";
+?> </center>
+</body>
+</html>

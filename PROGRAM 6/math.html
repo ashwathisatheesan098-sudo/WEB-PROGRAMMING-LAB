@@ -1,0 +1,62 @@
+
+<html>
+    <head>
+
+    </head>
+
+    <body bgcolor="FA8072" > 
+        <!-- 9d825d e4d5b4 -->
+        <center>
+        <h1>Math Functions</h1>
+        <label for="numbers"><b>Enter the numbers separated by comma: </b></label>
+        <input type="text" id="numbers"><br><br>
+        <button onclick="mathfun()">Perform Math Functions</button>
+        
+        <p id="paragraph">
+            <script>
+                function mathfun(){
+                    const n=document.getElementById("numbers").value.split(',').map(Number);
+                    let result="";
+                    const rounded_numbers = n.map(num => Math.round(num));
+                    result += "Round each Number: " + rounded_numbers.join(", ")+"<br>"+"<br>";
+                    document.getElementById("paragraph").innerHTML = result;
+                    
+                    const ceil_numbers = n.map(num => Math.ceil(num));
+                    result += "Rounded Up (Ceil): " + ceil_numbers.join(", ")+"<br>"+"<br>";
+                    document.getElementById("paragraph").innerHTML = result;
+
+                    const floor_numbers = n.map(num => Math.floor(num));
+                    result += "Rounded down (Floor): " + floor_numbers.join(", ")+"<br>"+"<br>";
+                    document.getElementById("paragraph").innerHTML = result;
+
+                    const sign_numbers = n.map(num => Math.sign(num));
+                    result += "Sign of each number: " + sign_numbers.join(", ")+"<br>"+"<br>";
+                    document.getElementById("paragraph").innerHTML = result;
+
+                    const exponent = parseFloat(prompt("Enter the exponent for power calculation: "));
+                    const power_numbers = n.map(num => Math.pow(num,exponent));
+                    result += "Each number to the power of "+exponent +": " + power_numbers.join(", ")+"<br>"+"<br>";
+                    document.getElementById("paragraph").innerHTML = result;
+
+                    const min_number = Math.min(...n); 
+                    result += "Minimum Number: " + min_number + "<br>"+"<br>";
+                    document.getElementById("paragraph").innerHTML = result;
+
+                    const max_number = Math.max(...n); 
+                    result += "Maximum Number: " + max_number + "<br>"+"<br>";
+                    document.getElementById("paragraph").innerHTML = result;
+
+                    const log_numbers = n.map(num => Math.log(num).toFixed(3));
+                    result += "Natural logarithms of each number: " + log_numbers.join(", ")+"<br>"+"<br>";
+                    document.getElementById("paragraph").innerHTML = result;
+
+                    const log10_numbers = n.map(num => Math.log10(num).toFixed(3));
+                    result += "Base 10 logarithms of each number: " + log10_numbers.join(", ")+"<br>"+"<br>";
+                    document.getElementById("paragraph").innerHTML = result;
+
+                }
+            </script>
+        </p>
+        </center>
+    </body>
+</html>

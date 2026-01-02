@@ -1,0 +1,48 @@
+<html>
+<head>
+<link rel="stylesheet" href="pos.css">
+<link rel="stylesheet" href="pos2.css">
+<style>
+.box {
+height: 100px;
+width: 100px;
+margin: 5px;
+}
+.box2{
+position: relative;
+width: 700px;
+height: 200px;
+border: 2px solid black;
+margin-top: 100px;
+margin-left:10px;
+}
+.flex {
+display: flex;
+width: 700px;
+height: 200px;
+border: 2px solid black;
+}
+</style>
+</head>
+<body>
+<h1>RELATIVE POSITION</h1>
+<p>An element with position: relative; is positioned relative to its normal position in the document flow.</p>
+<div class="flex">
+<div class="box" id="red"></div>
+<div class="box" id="green"></div>
+<div class="box" id="blue"></div>
+<div class="box" id="yellow"></div>
+</div>
+<h1>ABSOLUTE POSITION</h1>
+<p>An element with position: absolute; is positioned relative to the nearest
+positioned ancestor (with position other than static).Here the parent position is
+div class with "box2" and children are div with class "box" and id's
+"a","b","c","d". </p>
+<div class="box2">
+<div class="box" id="a"></div>
+<div class="box" id="b"></div>
+<div class="box" id="c"></div>
+<div class="box" id="d"></div>
+</div>
+</body>
+</html>

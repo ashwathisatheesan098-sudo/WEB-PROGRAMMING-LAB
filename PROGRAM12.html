@@ -1,0 +1,214 @@
+<html>
+<head>
+  <title>online exam</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #A9A9A9;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .info {
+      text-align: center;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .question {
+      margin-bottom: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+    .question p {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    label {
+      display: block;
+      margin: 5px 0;
+    }
+    button {
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1a252f;
+    }
+    .result {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .hidden {
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Online Exam</h1>
+    <p class="info">Answer all 10 questions and click <b>Submit</b> to see your score.</p>
+
+    <form id="examForm">
+      <div class="question">
+        <p>1. Which tag is used to include JavaScript in HTML?</p>
+        <label><input type="radio" name="q1" value="A"> &lt;js&gt;</label>
+        <label><input type="radio" name="q1" value="B"> &lt;script&gt;</label>
+        <label><input type="radio" name="q1" value="C"> &lt;javascript&gt;</label>
+        <label><input type="radio" name="q1" value="D"> &lt;code&gt;</label>
+      </div>
+
+      <div class="question">
+        <p>2. Which CSS property controls the inside spacing of an element?</p>
+        <label><input type="radio" name="q2" value="A"> margin</label>
+        <label><input type="radio" name="q2" value="B"> padding</label>
+        <label><input type="radio" name="q2" value="C"> spacing</label>
+        <label><input type="radio" name="q2" value="D"> border</label>
+      </div>
+
+      <div class="question">
+        <p>3. What does DOM stand for?</p>
+        <label><input type="radio" name="q3" value="A"> Document Object Model</label>
+        <label><input type="radio" name="q3" value="B"> Data Object Method</label>
+        <label><input type="radio" name="q3" value="C"> Document Order Method</label>
+        <label><input type="radio" name="q3" value="D"> Display Object Model</label>
+      </div>
+
+      <div class="question">
+        <p>4. Which function displays data in the browser console?</p>
+        <label><input type="radio" name="q4" value="A"> print()</label>
+        <label><input type="radio" name="q4" value="B"> console.log()</label>
+        <label><input type="radio" name="q4" value="C"> display()</label>
+        <label><input type="radio" name="q4" value="D"> write()</label>
+      </div>
+
+      <div class="question">
+        <p>5. Which is the correct way to declare a JavaScript array?</p>
+        <label><input type="radio" name="q5" value="A"> var arr = {};</label>
+        <label><input type="radio" name="q5" value="B"> var arr = [];</label>
+        <label><input type="radio" name="q5" value="C"> var arr = ();</label>
+        <label><input type="radio" name="q5" value="D"> var arr = "";</label>
+      </div>
+
+      <!-- New 5 Questions -->
+      <div class="question">
+        <p>6. Which HTML tag is used to create a hyperlink?</p>
+        <label><input type="radio" name="q6" value="A"> &lt;link&gt;</label>
+        <label><input type="radio" name="q6" value="B"> &lt;href&gt;</label>
+        <label><input type="radio" name="q6" value="C"> &lt;a&gt;</label>
+        <label><input type="radio" name="q6" value="D"> &lt;url&gt;</label>
+      </div>
+
+      <div class="question">
+        <p>7. Which CSS property changes the text color?</p>
+        <label><input type="radio" name="q7" value="A"> color</label>
+        <label><input type="radio" name="q7" value="B"> text-color</label>
+        <label><input type="radio" name="q7" value="C"> font-color</label>
+        <label><input type="radio" name="q7" value="D"> bgcolor</label>
+      </div>
+
+      <div class="question">
+        <p>8. How can you write “Hello World” in an alert box?</p>
+        <label><input type="radio" name="q8" value="A"> alertBox("Hello World");</label>
+        <label><input type="radio" name="q8" value="B"> msg("Hello World");</label>
+        <label><input type="radio" name="q8" value="C"> alert("Hello World");</label>
+        <label><input type="radio" name="q8" value="D"> prompt("Hello World");</label>
+      </div>
+
+      <div class="question">
+        <p>9. Which symbol is used for single-line comments in JavaScript?</p>
+        <label><input type="radio" name="q9" value="A"> /* comment */</label>
+        <label><input type="radio" name="q9" value="B"> # comment</label>
+        <label><input type="radio" name="q9" value="C"> // comment</label>
+        <label><input type="radio" name="q9" value="D"> &lt;!-- comment --&gt;</label>
+      </div>
+
+      <div class="question">
+        <p>10. Which method is used to change the content of an HTML element?</p>
+        <label><input type="radio" name="q10" value="A"> innerHTML</label>
+        <label><input type="radio" name="q10" value="B"> document.change()</label>
+        <label><input type="radio" name="q10" value="C"> value()</label>
+        <label><input type="radio" name="q10" value="D"> writeHTML()</label>
+      </div>
+
+      <div style="text-align:center;">
+        <button type="button" onclick="submitExam()">Submit</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+
+    <div id="result" class="result hidden"></div>
+
+  </div>
+
+  <script>
+    function submitExam() {
+      const answers = {
+        q1: "B", q2: "B", q3: "A", q4: "B", q5: "B",
+        q6: "C", q7: "A", q8: "C", q9: "C", q10: "A"
+      };
+
+      let form = document.getElementById("examForm");
+      let total = 10;
+      let score = 0;
+
+      for (let i = 1; i <= total; i++) {
+        let q = form["q" + i].value;
+        if (!q) {
+          alert("Please answer all questions before submitting.");
+          return;
+        }
+      }
+
+      for (let i = 1; i <= total; i++) {
+        let selected = form["q" + i].value;
+        if (selected === answers["q" + i]) score++;
+      }
+
+      let result = document.getElementById("result");
+      result.classList.remove("hidden");
+      let percent = (score / total) * 100;
+
+      result.innerHTML = "You scored " + score + " out of " + total +
+                         " (" + percent.toFixed(0) + "%) - ";
+
+      result.innerHTML += "<b>Correct Answers:</b><br>" +
+        "1. &lt;script&gt;<br>" +
+        "2. padding<br>" +
+        "3. Document Object Model<br>" +
+        "4. console.log()<br>" +
+        "5. var arr = []<br>" +
+        "6. &lt;a&gt;<br>" +
+        "7. color<br>" +
+        "8. alert('Hello World')<br>" +
+        "9. // comment<br>" +
+        "10. innerHTML<br>";
+
+      result.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,23 @@
+<html>
+<body bgcolor="AF7AC5">
+<h2><center>Multiple Event Listeners</center></h2>
+<p><center>When you hover over the button, it cheerfully displays "Moused over!!!".<br>Clicking the button makes it shout "Clicked!!!".<br>Moving your mouse away prompts it to say "Moused out!!!".<center></p>
+<button id="btn" style="background-color:#BB8FCE;">TOUCH ME</button>
+<p id="demo"></p>
+<script>
+var x = document.getElementById("btn");
+x.addEventListener("mouseover",Function1);
+x.addEventListener("click",Function2);
+x.addEventListener("mouseout",Function3);
+function Function1() {
+document.getElementById("demo").innerHTML += "Moused over!!!<br>";
+}
+function Function2() {
+document.getElementById("demo").innerHTML += "Clicked!!!<br>";
+}
+function Function3() {
+document.getElementById("demo").innerHTML += "Moused out!!!<br>";
+}
+</script>
+</body>
+</html>

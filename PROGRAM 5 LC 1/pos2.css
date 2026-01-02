@@ -1,0 +1,24 @@
+#a{
+position: absolute;
+left: 50px;
+top: 20px;
+background-color: yellow;
+}
+#b {
+position: absolute;
+left: 100px;
+top: 50px;
+background-color: maroon;
+}
+#c {
+position: absolute;
+left: 150px;
+top: 20px;
+background-color: black;
+}
+#d {
+position: absolute;
+left: 200px;
+top: 5px;
+background-color: blue;
+}
